@@ -138,15 +138,14 @@
     <tr>
       <th>NO. REGISTRASI</th>
       <th>NAMA KORBAN</th>
-      <th>NIK KORBAN</th>
       <th>JENIS KELAMIN KORBAN</th>
       <th>TTL KORBAN</th>
       <th>UMUR KORBAN</th>
-      <th>KRONOLOGI SINGKAT</th>
       <th>ALAMAT</th>
+      <th>KONTAK KORBAN/WALI</th>
+      <th>KRONOLOGI SINGKAT</th>
       <th>NAMA WALI KORBAN</th>
       <th>NIK WALI</th>
-      <th>KONTAK KORBAN</th>
       <th>JENIS KASUS</th>
       <th>TANGGAL KEJADIAN</th>
       <th>ALAMAT TKP</th>

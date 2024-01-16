@@ -13,11 +13,11 @@ if ($result->num_rows > 0) {
             <td>" . $row["jenis_kelamin_korban"] . "</td>
             <td>" . $row["ttl_korban"] . "</td>
             <td>" . $row["umur_korban"] . "</td>
-            <td>" . $row["kronologi_singkat"] . "</td>
             <td>" . $row["alamat"] . "</td>
+            <td>" . $row["kontak_korban"] . "</td>
+            <td>" . $row["kronologi_singkat"] . "</td>
             <td>" . $row["pekerjaan_korban"] . "</td>
             <td>" . $row["status_perkawinan_korban"] . "</td>
-            <td>" . $row["kontak_korban"] . "</td>
             <td>" . $row["jenis_kasus"] . "</td>
             <td>" . $row["tanggal_kejadian"] . "</td>
             <td>" . $row["alamat_tkp"] . "</td>

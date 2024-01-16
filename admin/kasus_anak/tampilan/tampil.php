@@ -9,15 +9,14 @@ if ($result->num_rows > 0) {
     echo "<tr>
             <td>" . $row["no_registrasi"] . "</td>
             <td>" . $row["nama_korban"] . "</td>
-            <td>" . $row["nik_korban"] . "</td>
             <td>" . $row["jenis_kelamin_korban"] . "</td>
             <td>" . $row["ttl_korban"] . "</td>
             <td>" . $row["umur_korban"] . "</td>
-            <td>" . $row["kronologi_singkat"] . "</td>
             <td>" . $row["alamat"] . "</td>
+            <td>" . $row["kontak_korban"] . "</td>
+            <td>" . $row["kronologi_singkat"] . "</td>
             <td>" . $row["nama_wali_korban"] . "</td>
             <td>" . $row["nik_wali"] . "</td>
-            <td>" . $row["kontak_korban"] . "</td>
             <td>" . $row["jenis_kasus"] . "</td>
             <td>" . $row["tanggal_kejadian"] . "</td>
             <td>" . $row["alamat_tkp"] . "</td>

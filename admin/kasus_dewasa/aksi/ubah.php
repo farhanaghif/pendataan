@@ -6,14 +6,15 @@ $id = $_POST["id"]; // The hidden input field in the form
 
 $no_registrasi = $_POST["no_registrasi"];
 $nama_korban = $_POST["nama_korban"];
+$nik_korban = $_POST["nik_korban"];
 $jenis_kelamin_korban = $_POST["jenis_kelamin_korban"];
 $ttl_korban = $_POST["ttl_korban"];
 $umur_korban = $_POST["umur_korban"];
-$alamat = $_POST["alamat"];
-$kontak_korban = $_POST["kontak_korban"];
 $kronologi_singkat = $_POST["kronologi_singkat"];
-$nama_wali_korban = $_POST["nama_wali_korban"];
-$nik_wali = $_POST["nik_wali"];
+$alamat = $_POST["alamat"];
+$pekerjaan_korban = $_POST["pekerjaan_korban"];
+$status_perkawinan_korban = $_POST["status_perkawinan_korban"];
+$kontak_korban = $_POST["kontak_korban"];
 $jenis_kasus = $_POST["jenis_kasus"];
 $tanggal_kejadian = $_POST["tanggal_kejadian"];
 $alamat_tkp = $_POST["alamat_tkp"];
@@ -25,21 +26,23 @@ $umur_pelaku = $_POST["umur_pelaku"];
 $hubungan_dengan_korban = $_POST["hubungan_dengan_korban"];
 $alamat_pelaku = $_POST["alamat_pelaku"];
 $pekerjaan_pelaku = $_POST["pekerjaan_pelaku"];
+$status_perkawinan_pelaku = $_POST["status_perkawinan_pelaku"];
 $kontak_pelaku = $_POST["kontak_pelaku"];
 $satgas = $_POST["satgas"];
 
 // Update data di database
-$sql = "UPDATE `kasus_anak` SET
+$sql = "UPDATE `kasus_dewasa` SET
         `no_registrasi` = '$no_registrasi',
         `nama_korban` = '$nama_korban',
+        `nik_korban` = '$nik_korban',
         `jenis_kelamin_korban` = '$jenis_kelamin_korban',
         `ttl_korban` = '$ttl_korban',
         `umur_korban` = '$umur_korban',
         `alamat` = '$alamat',
         `kontak_korban` = '$kontak_korban',
         `kronologi_singkat` = '$kronologi_singkat',
-        `nama_wali_korban` = '$nama_wali_korban',
-        `nik_wali` = '$nik_wali',
+        `pekerjaan_korban` = '$pekerjaan_korban',
+        `status_perkawinan_korban` = '$status_perkawinan_korban',
         `jenis_kasus` = '$jenis_kasus',
         `tanggal_kejadian` = '$tanggal_kejadian',
         `alamat_tkp` = '$alamat_tkp',
@@ -51,6 +54,7 @@ $sql = "UPDATE `kasus_anak` SET
         `hubungan_dengan_korban` = '$hubungan_dengan_korban',
         `alamat_pelaku` = '$alamat_pelaku',
         `pekerjaan_pelaku` = '$pekerjaan_pelaku',
+        `status_perkawinan_pelaku` = '$status_perkawinan_pelaku',
         `kontak_pelaku` = '$kontak_pelaku',
         `satgas` = '$satgas'
         WHERE `id` = '$id'";
@@ -62,7 +66,7 @@ if ($result) {
     echo "
     <script>
         alert('Data berhasil diupdate');
-        window.location.href = '../tampilan/lihat_data_kasus_anak.php';
+        window.location.href = '../tampilan/lihat_data_kasus_dewasa.php';
     </script>";
 } else {
     echo "Data gagal diupdate: " . mysqli_error($conn);

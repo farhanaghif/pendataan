@@ -125,33 +125,6 @@
 
 <body style="background-color:white;">
 
-  <div class="navbar">
-    <a href="../../">PROFIL</a>
-    <a href="../../ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
-    <div class="dropdown">
-      <button class="dropbtn">TAMBAH DATA
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
-        <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
-        <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
-        <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
-        <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
-      </div>
-      </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">LIHAT DATA
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="lihat_data_kasus_anak.php">LIHAT DATA KASUS ANAK</a>
-        <a href="../../kasus_dewasa/tampilan/lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
-      </div>
-    </div>
-  </div>
-
   <h2>Lihat Data Kasus Anak</h2>
   <hr>
   <br>
@@ -160,31 +133,19 @@
     <tr>
       <th>NO. REGISTRASI</th>
       <th>NAMA KORBAN</th>
-      <th>NIK KORBAN</th>
-      <th>JENIS KELAMIN KORBAN</th>
-      <th>TTL KORBAN</th>
       <th>UMUR KORBAN</th>
-      <th>KRONOLOGI SINGKAT</th>
       <th>ALAMAT</th>
       <th>NAMA WALI KORBAN</th>
       <th>NIK WALI</th>
-      <th>KONTAK KORBAN</th>
-      <th>JENIS KASUS</th>
+      <th>KONTAK KORBAN/WALI</th>
       <th>TANGGAL KEJADIAN</th>
+      <th>KRONOLOGI SINGKAT</th>
       <th>ALAMAT TKP</th>
-      <th>KECAMATAN</th>
       <th>NAMA PELAKU</th>
       <th>NIK PELAKU</th>
-      <th>TTL PELAKU</th>
-      <th>UMUR PELAKU</th>
-      <th>HUBUNGAN DENGAN KORBAN</th>
-      <th>ALAMAT PELAKU</th>
-      <th>PEKERJAAN PELAKU</th>
-      <th>KONTAK PELAKU</th>
       <th>SATGAS</th>
-      <th>ACTION</th>
     </tr>
-    <?php include 'tampil.php'; ?> <!-- menambahkan kode ini untuk menghubungkan dengan tampil.php -->
+    <?php include 'tampil_cetak.php'; ?> <!-- menambahkan kode ini untuk menghubungkan dengan tampil.php -->
   </table>
 
   <script>

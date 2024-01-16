@@ -139,9 +139,6 @@
         <label>NAMA KORBAN</label>
         <input type="text" id="nama_korban" name="nama_korban" value="<?php echo $row["nama_korban"]; ?>"><br><br>
 
-        <label>NIK KORBAN</label>
-        <input type="text" id="nik_korban" name="nik_korban" value="<?php echo $row["nik_korban"]; ?>"><br><br>
-
         <label>JENIS KELAMIN KORBAN</label>
         <label><input type="radio" name="jenis_kelamin_korban" value="Perempuan" <?php echo ($row["jenis_kelamin_korban"] == 'Perempuan') ? 'checked' : ''; ?>>Perempuan</label>
         <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki" <?php echo ($row["jenis_kelamin_korban"] == 'Laki-Laki') ? 'checked' : ''; ?>>Laki-Laki</label><br><br>
@@ -152,20 +149,20 @@
         <label>UMUR KORBAN</label>
         <input type="text" id="umur_korban" name="umur_korban" value="<?php echo $row["umur_korban"]; ?>"><br><br>
 
-        <label>KRONOLOGI SINGKAT</label><br>
-        <textarea name="kronologi_singkat"><?php echo $row["kronologi_singkat"]; ?></textarea><br><br>
-
         <label>ALAMAT</label><br>
         <textarea name="alamat"><?php echo $row["alamat"]; ?></textarea><br><br>
+
+        <label>KONTAK KORBAN/WALI</label>
+        <input type="text" id="kontak_korban" name="kontak_korban" value="<?php echo $row["kontak_korban"]; ?>"><br><br>
+
+        <label>KRONOLOGI SINGKAT</label><br>
+        <textarea name="kronologi_singkat"><?php echo $row["kronologi_singkat"]; ?></textarea><br><br>
 
         <label>NAMA WALI KORBAN</label>
         <input type="text" id="nama_wali_korban" name="nama_wali_korban" value="<?php echo $row["nama_wali_korban"]; ?>"><br><br>
 
         <label>NIK WALI</label>
         <input type="text" id="nik_wali" name="nik_wali" value="<?php echo $row["nik_wali"]; ?>"><br><br>
-
-        <label>KONTAK KORBAN</label>
-        <input type="text" id="kontak_korban" name="kontak_korban" value="<?php echo $row["kontak_korban"]; ?>"><br><br>
 
         <label>JENIS KASUS</label>
         <select name="jenis_kasus">

@@ -122,20 +122,20 @@
       <label>UMUR KORBAN</label>
       <input type="text" id="umur_korban" name="umur_korban"><br><br>
       
-      <label>KRONOLOGI SINGKAT</label><br>
-      <textarea name="kronologi_singkat"></textarea><br><br>
-
       <label>ALAMAT</label><br>
       <textarea name="alamat"></textarea><br><br>
+
+      <label>KONTAK KORBAN</label>
+      <input type="text" id="kontak_korban" name="kontak_korban"><br><br>
+      
+      <label>KRONOLOGI SINGKAT</label><br>
+      <textarea name="kronologi_singkat"></textarea><br><br>
 
       <label>PEKERJAAN KORBAN</label>
       <input type="text" id="pekerjaan_korban" name="pekerjaan_korban"><br><br>
 
       <label>STATUS PERKAWINAN KORBAN</label>
       <input type="text" id="status_perkawinan_korban" name="status_perkawinan_korban"><br><br>
-
-      <label>KONTAK KORBAN</label>
-      <input type="text" id="kontak_korban" name="kontak_korban"><br><br>
 
       <label>JENIS KASUS</label>
       <select name="jenis_kasus">

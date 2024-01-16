@@ -109,9 +109,6 @@
       <label>NAMA KORBAN</label>
       <input type="text" id="nama_korban" name="nama_korban"><br><br>
 
-      <label>NIK KORBAN</label>
-      <input type="text" id="nik_korban" name="nik_korban"><br><br>
-      
       <label>JENIS KELAMIN KORBAN</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Perempuan">Perempuan</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki">Laki-Laki</label><br><br>
@@ -121,21 +118,21 @@
 
       <label>UMUR KORBAN</label>
       <input type="text" id="umur_korban" name="umur_korban"><br><br>
-      
-      <label>KRONOLOGI SINGKAT</label><br>
-      <textarea name="kronologi_singkat"></textarea><br><br>
 
       <label>ALAMAT</label><br>
       <textarea name="alamat"></textarea><br><br>
+
+      <label>KONTAK KORBAN/WALI</label>
+      <input type="text" id="kontak_korban" name="kontak_korban"><br><br>
+      
+      <label>KRONOLOGI SINGKAT</label><br>
+      <textarea name="kronologi_singkat"></textarea><br><br>
 
       <label>NAMA WALI KORBAN</label>
       <input type="text" id="nama_wali_korban" name="nama_wali_korban"><br><br>
 
       <label>NIK WALI</label>
       <input type="text" id="nik_wali" name="nik_wali"><br><br>
-
-      <label>KONTAK KORBAN</label>
-      <input type="text" id="kontak_korban" name="kontak_korban"><br><br>
 
       <label>JENIS KASUS</label>
       <select name="jenis_kasus">

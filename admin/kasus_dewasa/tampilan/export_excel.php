@@ -142,11 +142,11 @@
       <th>JENIS KELAMIN KORBAN</th>
       <th>TTL KORBAN</th>
       <th>UMUR KORBAN</th>
-      <th>KRONOLOGI SINGKAT</th>
       <th>ALAMAT</th>
+      <th>KONTAK KORBAN</th>
+      <th>KRONOLOGI SINGKAT</th>
       <th>PEKERJAAN KORBAN</th>
       <th>STATUS PERKAWINAN KORBAN</th>
-      <th>KONTAK KORBAN</th>
       <th>JENIS KASUS</th>
       <th>TANGGAL KEJADIAN</th>
       <th>ALAMAT TKP</th>
