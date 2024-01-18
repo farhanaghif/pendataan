@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Login Pendataan</title>
+  <title>Daftar Akun</title>
   <style>
     body {
       background: #456;
@@ -13,20 +13,20 @@
       margin: 0;
     }
 
-    .login {
+    .daftar {
       width: 400px;
       margin: 16px auto;
       font-size: 16px;
     }
 
     /* Reset top and bottom margins from certain elements */
-    .login-header,
-    .login p {
+    .daftar-header,
+    .daftar p {
       margin-top: 0;
       margin-bottom: 0;
     }
 
-    .login-header {
+    .daftar-header {
       background: #28d;
       padding: 20px;
       font-size: 1.4em;
@@ -36,17 +36,17 @@
       color: #fff;
     }
 
-    .login-container {
+    .daftar-container {
       background: #ebebeb;
       padding: 12px;
     }
 
-    /* Every row inside .login-container is defined with p tags */
-    .login p {
+    /* Every row inside .daftar-container is defined with p tags */
+    .daftar p {
       padding: 12px;
     }
 
-    .login input {
+    .daftar input {
       box-sizing: border-box;
       display: block;
       width: 100%;
@@ -58,52 +58,61 @@
       font-size: 0.95em;
     }
 
-    .login input[type="username"],
-    .login input[type="password"] {
+    .daftar input[type="username"],
+    .daftar input[type="password"] {
       background: #fff;
       border-color: #bbb;
       color: #555;
     }
 
     /* Text fields' focus effect */
-    .login input[type="username"]:focus,
-    .login input[type="password"]:focus {
+    .daftar input[type="username"]:focus,
+    .daftar input[type="password"]:focus {
       border-color: #888;
     }
 
-    .login input[type="submit"] {
+    .daftar input[type="submit"] {
       background: #28d;
       border-color: transparent;
       color: #fff;
       cursor: pointer;
     }
 
-    .login input[type="submit"]:hover {
+    .daftar input[type="submit"]:hover {
       background: #17c;
     }
 
     /* Buttons' focus effect */
-    .login input[type="submit"]:focus {
+    .daftar input[type="submit"]:focus {
       border-color: #05a;
     }
   </style>
 </head>
 
 <body>
-  <div class="login">
-    <h2 class="login-header">Login</h2>
-    <form class="login-container" action="login_aksi.php" method="post">
+  <div class="daftar">
+    <h2 class="daftar-header">Daftar Akun</h2>
+    <form class="daftar-container" action="daftar_akun_aksi.php" method="post">
       <p>
-        <input type="username" placeholder="Username" name="username">
+        <input type="text" placeholder="NIK" name="nik">
+      </p>
+      <p>
+        <input type="text" placeholder="Username" name="username">
+      </p>
+      <p>
+        <input type="text" placeholder="Nama" name="nama">
+      </p>
+      <p>
+        <input type="text" placeholder="Alamat" name="alamat">
+      </p>
+      <p>
+        <input type="text" placeholder="No HP" name="telp">
       </p>
       <p>
         <input type="password" placeholder="Password" name="password">
       </p>
-      <p style="text-align: right;">
-        Belum punya akun? <a href="daftar_akun.php">Daftar Disini</a>
-      </p>
       <p>
-        <input type="submit" value="Log in">
+        <input type="submit" value="Daftar">
       </p>
     </form>
   </div>
