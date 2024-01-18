@@ -88,7 +88,7 @@
         <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
         <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
       </div>
-      </div>
+    </div>
 
     <div class="dropdown">
       <button class="dropbtn">LIHAT DATA
@@ -113,14 +113,19 @@
   </head>
 
   <body>
+    <?php
+    $id = $_GET["id"];
+    ?>
 
-    <form action="" method="post">
+    <form action="../aksi/ganti_password_aksi.php" method="post">
+      <input type="hidden" name="id" value="<?php echo $id; ?>">
+
       <label>PASSWORD LAMA</label>
       <input type="text" id="password_lama" name="password_lama"><br><br>
-      
+
       <label>PASSWORD BARU</label>
       <input type="text" id="password_baru" name="password_baru"><br><br>
-      
+
       <label>ULANG PASSWORD BARU</label>
       <input type="text" id="ulang_password_baru" name="ulang_password_baru"><br><br>
 

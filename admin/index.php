@@ -73,10 +73,13 @@
 </head>
 
 <body style="background-color:white;">
+  <?php
+  include '../koneksi.php';
+  $id = $_GET["id"]; ?>
 
   <div class="navbar">
     <a href="">PROFIL</a>
-    <a href="ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
+    <a href="ganti_password/tampilan/ganti_password.php?id=<?php echo $id; ?>">GANTI PASSWORD</a>
     <div class="dropdown">
       <button class="dropbtn">TAMBAH DATA
         <i class="fa fa-caret-down"></i>
@@ -88,7 +91,7 @@
         <a href="jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
         <a href="wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
       </div>
-      </div>
+    </div>
 
     <div class="dropdown">
       <button class="dropbtn">LIHAT DATA
@@ -99,28 +102,47 @@
         <a href="kasus_dewasa/tampilan/lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
       </div>
     </div>
+    <a href="verifikasi_akun/tampilan/index.php">VERIFIKASI AKUN</a>
   </div>
 
-  <h2>PROFIL</h2>
+  <h2>EDIT PROFIL</h2>
   <hr>
 
-  <img src="">
+  <?php
+  $sql = "SELECT * FROM login WHERE id = $id";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $profile = $row['foto_profil'] == null ? '../img/profile.jpeg' : '../img/photo/' . $row['foto_profil'];
+  ?>
+    <img width="200" height="200" src="<?php echo $profile ?>"><br><br>
 
-  <form action="" method="post">
-    <label>NAMA</label>
-    <input type="text" id="nama" name="nama"><br><br>
+    <form action="update_profile.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+      <label>NAMA</label>
+      <input type="text" id="nama" name="nama" value=" <?php echo $row['nama'] ?>"><br><br>
 
-    <label>JABATAN</label>
-    <input type="text" id="jabatan" name="jabatan"><br><br>
+      <label>NIK</label>
+      <input type="text" id="nik" name="nik" value=" <?php echo $row['nik'] ?>"><br><br>
 
-    <label>ALAMAT</label><br>
-    <textarea name="alamat"></textarea><br><br>
+      <label>ALAMAT</label><br>
+      <textarea name="alamat"><?php echo $row['alamat'] ?></textarea><br><br>
 
-    <label>NO. HP</label>
-    <input type="text" id="no_hp" name="no_hp"><br><br>
+      <label>NO. HP</label>
+      <input type="text" id="telp" name="telp" value=" <?php echo $row['telp'] ?>"><br><br>
 
-    <input type="submit" name="edit" value="Edit">
-  </form>
+      <label>Update Foto Profil</label><br><br>
+      <input type="file" name="foto_profil" accept="image/*"><br><br>
+
+      <input type="submit" name="edit" value="Edit">
+    </form>
+  <?php
+  } else {
+    echo "Data not found.";
+  }
+
+  $conn->close();
+  ?>
 
 </body>
 

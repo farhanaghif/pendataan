@@ -19,10 +19,13 @@ if ($result) {
             </script>";
         } else {
             $_SESSION['role'] = $user_data['role'];
+            $role = $user_data['role'] == 'admin'
+                ? 'admin/index.php?id=' . $user_data['id']
+                : 'member/index.php?id=' . $user_data['id'];
             if ($user_data['role'] == 'admin') {
-                header("Location: admin/");
+                header("Location: $role");
             } else {
-                header("Location: member/");
+                header("Location: $role");
             }
         }
     } else {

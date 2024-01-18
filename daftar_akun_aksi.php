@@ -9,7 +9,7 @@ $telp = $_POST["telp"];
 $password = $_POST["password"];
 
 $sql = "INSERT INTO login
-VALUES (null,'$nik','$username','$nama','user','$alamat','$telp','$password',0)";
+VALUES (null,'$nik','$username','$nama','user','$alamat','$telp','$password',0,null)";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
