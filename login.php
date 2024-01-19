@@ -27,7 +27,7 @@
     }
 
     .login-header {
-      background: #28d;
+      background: black;
       padding: 20px;
       font-size: 1.4em;
       font-weight: normal;
@@ -72,7 +72,7 @@
     }
 
     .login input[type="submit"] {
-      background: #28d;
+      background: black;
       border-color: transparent;
       color: #fff;
       cursor: pointer;
