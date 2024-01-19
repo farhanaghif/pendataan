@@ -121,6 +121,214 @@
       }
     }
   </script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+  <!-- <script>
+    $(document).ready(function() {
+      // Initialize DataTable with AJAX
+      $('#myDataTable').DataTable({
+        "ajax": {
+          "url": "tampil.php",
+          "type": "POST"
+        },
+        "columns": [{
+            "data": "no_registrasi"
+          },
+          {
+            "data": "nama_korban"
+          },
+          {
+            "data": "jenis_kelamin_korban"
+          },
+          {
+            "data": "ttl_korban"
+          },
+          {
+            "data": "umur_korban"
+          },
+          {
+            "data": "alamat"
+          },
+          {
+            "data": "kontak_korban"
+          },
+          {
+            "data": "kronologi_singkat"
+          },
+          {
+            "data": "nama_wali_korban"
+          },
+          {
+            "data": "nik_wali"
+          },
+          {
+            "data": "jenis_kasus"
+          },
+          {
+            "data": "tanggal_kejadian"
+          },
+          {
+            "data": "alamat_tkp"
+          },
+          {
+            "data": "kecamatan"
+          },
+          {
+            "data": "nama_pelaku"
+          },
+          {
+            "data": "nik_pelaku"
+          },
+          {
+            "data": "ttl_pelaku"
+          },
+          {
+            "data": "umur_pelaku"
+          },
+          {
+            "data": "hubungan_dengan_korban"
+          },
+          {
+            "data": "alamat_pelaku"
+          },
+          {
+            "data": "pekerjaan_pelaku"
+          },
+          {
+            "data": "kontak_pelaku"
+          },
+          {
+            "data": "satgas"
+          },
+          {
+            "data": null,
+            "render": function(data, type, row) {
+              return `
+              <button class='edit-btn' onclick='window.location.href="edit.php?id=${row.id}"'>Edit</button>
+              <button class='hapus-btn' onclick='confirmDelete(${row.id})'>Hapus</button>
+            `;
+            }
+          }
+        ],
+        "scrollX": true, // Enable horizontal scrolling
+        "paging": true // Enable pagination
+
+      });
+    });
+  </script> -->
+  <script>
+    $(document).ready(function() {
+      var dataTable;
+
+      // Initialize DataTable with AJAX
+      function initializeDataTable(filterValue) {
+        dataTable = $('#myDataTable').DataTable({
+          "ajax": {
+            "url": "tampil.php",
+            "type": "POST",
+            "data": {
+              "kecamatan": filterValue
+            }
+          },
+          "columns": [{
+              "data": "no_registrasi"
+            },
+            {
+              "data": "nama_korban"
+            },
+            {
+              "data": "jenis_kelamin_korban"
+            },
+            {
+              "data": "ttl_korban"
+            },
+            {
+              "data": "umur_korban"
+            },
+            {
+              "data": "alamat"
+            },
+            {
+              "data": "kontak_korban"
+            },
+            {
+              "data": "kronologi_singkat"
+            },
+            {
+              "data": "nama_wali_korban"
+            },
+            {
+              "data": "nik_wali"
+            },
+            {
+              "data": "jenis_kasus"
+            },
+            {
+              "data": "tanggal_kejadian"
+            },
+            {
+              "data": "alamat_tkp"
+            },
+            {
+              "data": "kecamatan"
+            },
+            {
+              "data": "nama_pelaku"
+            },
+            {
+              "data": "nik_pelaku"
+            },
+            {
+              "data": "ttl_pelaku"
+            },
+            {
+              "data": "umur_pelaku"
+            },
+            {
+              "data": "hubungan_dengan_korban"
+            },
+            {
+              "data": "alamat_pelaku"
+            },
+            {
+              "data": "pekerjaan_pelaku"
+            },
+            {
+              "data": "kontak_pelaku"
+            },
+            {
+              "data": "satgas"
+            },
+            {
+              "data": null,
+              "render": function(data, type, row) {
+                return `
+              <button class='edit-btn' onclick='window.location.href="edit.php?id=${row.id}"'>Edit</button>
+              <button class='hapus-btn' onclick='confirmDelete(${row.id})'>Hapus</button>
+            `;
+              }
+            }
+          ],
+          "scrollX": true, // Enable horizontal scrolling
+          "paging": true // Enable pagination
+        });
+      }
+
+      // Initialize DataTable with the default filter value
+      initializeDataTable('');
+
+      // Update the table when the kecamatan dropdown changes
+      $('#kecamatanDropdown').on('change', function() {
+        var selectedKecamatan = $(this).val();
+        // Destroy the existing DataTable instance
+        dataTable.destroy();
+        // Initialize DataTable with the new filter value
+        initializeDataTable(selectedKecamatan);
+      });
+    });
+  </script>
+
 </head>
 
 <body style="background-color:white;">
@@ -139,7 +347,7 @@
         <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
         <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
       </div>
-      </div>
+    </div>
 
     <div class="dropdown">
       <button class="dropbtn">LIHAT DATA
@@ -156,39 +364,66 @@
   <hr>
   <br>
 
-  <table>
-    <tr>
-      <th>NO. REGISTRASI</th>
-      <th>NAMA KORBAN</th>
-      <th>JENIS KELAMIN KORBAN</th>
-      <th>TTL KORBAN</th>
-      <th>UMUR KORBAN</th>
-      <th>ALAMAT</th>
-      <th>KONTAK KORBAN/WALI</th>
-      <th>KRONOLOGI SINGKAT</th>
-      <th>NAMA WALI KORBAN</th>
-      <th>NIK WALI</th>
-      <th>JENIS KASUS</th>
-      <th>TANGGAL KEJADIAN</th>
-      <th>ALAMAT TKP</th>
-      <th>KECAMATAN</th>
-      <th>NAMA PELAKU</th>
-      <th>NIK PELAKU</th>
-      <th>TTL PELAKU</th>
-      <th>UMUR PELAKU</th>
-      <th>HUBUNGAN DENGAN KORBAN</th>
-      <th>ALAMAT PELAKU</th>
-      <th>PEKERJAAN PELAKU</th>
-      <th>KONTAK PELAKU</th>
-      <th>SATGAS</th>
-      <th>ACTION</th>
-    </tr>
-    <?php include 'tampil.php'; ?> <!-- menambahkan kode ini untuk menghubungkan dengan tampil.php -->
+  <label for="kecamatanDropdown">Filter Kecamatan</label>
+  <select name="kecamatan" id="kecamatanDropdown">
+    <option value=''>-- Pilih Kecamatan--</option>
+    <?php
+    include '../../../koneksi.php';
+    $sql_wilayah = "SELECT * FROM wilayah";
+    $result_wilayah = $conn->query($sql_wilayah);
+    if ($result_wilayah->num_rows > 0) {
+      while ($row = $result_wilayah->fetch_assoc()) {
+        $id = $row['id'];
+        $kode_wilayah = $row['kode_wilayah'];
+        $nama_wilayah = $row['nama_wilayah'];
+        $kecamatan = $row['kecamatan'];
+        echo "
+            <option value='$kecamatan'>$kode_wilayah - $nama_wilayah - $kecamatan</option>
+            ";
+      }
+    } else {
+      echo "<option>Tidak ada Jenis Kasus</option>";
+    }
+    $conn->close();
+    ?>
+  </select><br><br>
+
+  <table id="myDataTable">
+    <thead>
+      <tr>
+        <th>NO. REGISTRASI</th>
+        <th>NAMA KORBAN</th>
+        <th>JENIS KELAMIN KORBAN</th>
+        <th>TTL KORBAN</th>
+        <th>UMUR KORBAN</th>
+        <th>ALAMAT</th>
+        <th>KONTAK KORBAN/WALI</th>
+        <th>KRONOLOGI SINGKAT</th>
+        <th>NAMA WALI KORBAN</th>
+        <th>NIK WALI</th>
+        <th>JENIS KASUS</th>
+        <th>TANGGAL KEJADIAN</th>
+        <th>ALAMAT TKP</th>
+        <th>KECAMATAN</th>
+        <th>NAMA PELAKU</th>
+        <th>NIK PELAKU</th>
+        <th>TTL PELAKU</th>
+        <th>UMUR PELAKU</th>
+        <th>HUBUNGAN DENGAN KORBAN</th>
+        <th>ALAMAT PELAKU</th>
+        <th>PEKERJAAN PELAKU</th>
+        <th>KONTAK PELAKU</th>
+        <th>SATGAS</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
   </table>
 
   <br>
   <button>
-    <a target="_blank" href="cetak.php">CETAK</a>    
+    <a target="_blank" href="cetak.php">CETAK</a>
   </button>
   <button>
     <a target="_blank" href="export_excel.php">EXCEL</a>
