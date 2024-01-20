@@ -18,10 +18,12 @@ if ($result) {
                 window.location.href = 'login.php';
             </script>";
         } else {
+            session_start();
             $_SESSION['role'] = $user_data['role'];
+            $_SESSION['id'] = $user_data['id'];
             $role = $user_data['role'] == 'admin'
-                ? 'admin/index.php?id=' . $user_data['id']
-                : 'member/index.php?id=' . $user_data['id'];
+                ? 'admin/index.php'
+                : 'member/index.php';
             if ($user_data['role'] == 'admin') {
                 header("Location: $role");
             } else {

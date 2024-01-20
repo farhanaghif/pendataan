@@ -75,11 +75,12 @@
 <body style="background-color:white;">
   <?php
   include '../koneksi.php';
-  $id = $_GET["id"]; ?>
+  session_start();
+  $id = $_SESSION["id"]; ?>
 
   <div class="navbar">
     <a href="">PROFIL</a>
-    <a href="ganti_password/tampilan/ganti_password.php?id=<?php echo $id; ?>">GANTI PASSWORD</a>
+    <a href="ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
     <div class="dropdown">
       <button class="dropbtn">TAMBAH DATA
         <i class="fa fa-caret-down"></i>
@@ -103,6 +104,7 @@
       </div>
     </div>
     <a href="verifikasi_akun/tampilan/index.php">VERIFIKASI AKUN</a>
+    <a href="../logout.php">LOGOUT</a>
   </div>
 
   <h2>EDIT PROFIL</h2>
@@ -118,18 +120,18 @@
     <img width="200" height="200" src="<?php echo $profile ?>"><br><br>
 
     <form action="update_profile.php" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+      <input type="hidden" name="id" value="<?php echo $id; ?>">
       <label>NAMA</label>
-      <input type="text" id="nama" name="nama" value=" <?php echo $row['nama'] ?>"><br><br>
+      <input type="text" id="nama" name="nama" value="<?php echo $row['nama'] ?>"><br><br>
 
       <label>NIK</label>
-      <input type="text" id="nik" name="nik" value=" <?php echo $row['nik'] ?>"><br><br>
+      <input type="text" id="nik" name="nik" value="<?php echo $row['nik'] ?>"><br><br>
 
       <label>ALAMAT</label><br>
       <textarea name="alamat"><?php echo $row['alamat'] ?></textarea><br><br>
 
       <label>NO. HP</label>
-      <input type="text" id="telp" name="telp" value=" <?php echo $row['telp'] ?>"><br><br>
+      <input type="text" id="telp" name="telp" value="<?php echo $row['telp'] ?>"><br><br>
 
       <label>Update Foto Profil</label><br><br>
       <input type="file" name="foto_profil" accept="image/*"><br><br>

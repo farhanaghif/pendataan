@@ -109,13 +109,13 @@
   <html>
 
   <head>
-    <title>PASSWORD</title>
+    <title>Ganti Password</title>
   </head>
 
   <body>
     <?php
-    $id = $_GET["id"];
-    ?>
+    session_start();
+    $id = $_SESSION["id"]; ?>
 
     <form action="../aksi/ganti_password_aksi.php" method="post">
       <input type="hidden" name="id" value="<?php echo $id; ?>">
