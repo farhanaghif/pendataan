@@ -87,6 +87,7 @@
         <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
       </div>
     </div>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>GANTI PASSWORD</h2>
@@ -97,18 +98,23 @@
   <html>
 
   <head>
-    <title>PASSWORD</title>
+    <title>Ganti Password</title>
   </head>
 
   <body>
+    <?php
+    session_start();
+    $id = $_SESSION["id"]; ?>
 
-    <form action="" method="post">
+    <form action="../aksi/ganti_password_aksi.php" method="post">
+      <input type="hidden" name="id" value="<?php echo $id; ?>">
+
       <label>PASSWORD LAMA</label>
       <input type="text" id="password_lama" name="password_lama"><br><br>
-      
+
       <label>PASSWORD BARU</label>
       <input type="text" id="password_baru" name="password_baru"><br><br>
-      
+
       <label>ULANG PASSWORD BARU</label>
       <input type="text" id="ulang_password_baru" name="ulang_password_baru"><br><br>
 

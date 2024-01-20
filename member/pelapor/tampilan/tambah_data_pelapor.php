@@ -87,6 +87,7 @@
         <a href="tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
       </div>
     </div>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>TAMBAH DATA PELAPOR</h2>

@@ -133,7 +133,7 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
+        <a href="../../kasus_anak/tampilan/tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
         <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
         <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
         <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
@@ -146,10 +146,12 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="lihat_data_kasus_anak.php">LIHAT DATA KASUS ANAK</a>
+        <a href="../../kasus_anak/tampilan/lihat_data_kasus_anak.php">LIHAT DATA KASUS ANAK</a>
         <a href="../../kasus_dewasa/tampilan/lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
       </div>
     </div>
+    <a href="index.php">VERIFIKASI AKUN</a>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>Lihat Status Verifikasi Akun</h2>

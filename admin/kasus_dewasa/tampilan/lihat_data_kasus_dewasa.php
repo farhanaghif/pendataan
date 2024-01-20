@@ -125,7 +125,7 @@
 
 <body style="background-color:white;">
 
-<div class="navbar">
+  <div class="navbar">
     <a href="../../">PROFIL</a>
     <a href="../../ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
     <div class="dropdown">
@@ -139,7 +139,7 @@
         <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
         <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
       </div>
-      </div>
+    </div>
 
     <div class="dropdown">
       <button class="dropbtn">LIHAT DATA
@@ -150,6 +150,8 @@
         <a href="lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
       </div>
     </div>
+    <a href="../../verifikasi_akun/tampilan/index.php">VERIFIKASI AKUN</a>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>Lihat Data Kasus Dewasa</h2>

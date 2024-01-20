@@ -87,6 +87,7 @@
         <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
       </div>
     </div>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>TAMBAH DATA KASUS ANAK</h2>
