@@ -137,11 +137,24 @@
 
       <label>JENIS KASUS</label>
       <select name="jenis_kasus">
-        <option value="Kekerasan Fisik">Kekerasan Fisik</option>
-        <option value="Kekerasan Psikis">Kekerasan Psikis</option>
-        <option value="Kekerasan Seksual">Kekerasan Seksual</option>
-        <option value="Ekonomi">Ekonomi</option>
-        <option value="Lainnya">Lainnya</option>
+        <?php
+        include '../../../koneksi.php';
+        $sql_jenis_kasus = "SELECT * FROM jenis_kasus";
+        $result_jenis_kasus = $conn->query($sql_jenis_kasus);
+        if ($result_jenis_kasus->num_rows > 0) {
+          while ($row = $result_jenis_kasus->fetch_assoc()) {
+            $id = $row['id'];
+            $jenis_kasus = $row['jenis_kasus'];
+            $kode_jenis_kasus = $row['kode_jenis_kasus'];
+            echo "
+            <option value='$jenis_kasus'>$kode_jenis_kasus - $jenis_kasus</option>
+            ";
+          }
+        } else {
+          echo "<option>Tidak ada Jenis Kasus</option>";
+        }
+        $conn->close();
+        ?>
       </select><br><br>
 
       <label>TANGGAL KEJADIAN</label>
@@ -152,11 +165,25 @@
 
       <label>KECAMATAN</label>
       <select name="kecamatan">
-        <option value="Banjarmasin Tengah">Banjarmasin Tengah</option>
-        <option value="Banjarmasin Utara">Banjarmasin Utara</option>
-        <option value="Banjarmasin Timur">Banjarmasin Timur</option>
-        <option value="Banjarmasin Selatan">Banjarmasin Selatan</option>
-        <option value="Banjarmasin Barat">Banjarmasin Barat</option>
+        <?php
+        include '../../../koneksi.php';
+        $sql_wilayah = "SELECT * FROM wilayah";
+        $result_wilayah = $conn->query($sql_wilayah);
+        if ($result_wilayah->num_rows > 0) {
+          while ($row = $result_wilayah->fetch_assoc()) {
+            $id = $row['id'];
+            $kode_wilayah = $row['kode_wilayah'];
+            $nama_wilayah = $row['nama_wilayah'];
+            $kecamatan = $row['kecamatan'];
+            echo "
+            <option value='$kecamatan'>$kode_wilayah - $nama_wilayah - $kecamatan</option>
+            ";
+          }
+        } else {
+          echo "<option>Tidak ada Jenis Kasus</option>";
+        }
+        $conn->close();
+        ?>
       </select><br><br>
 
       <label>NAMA PELAKU</label>

@@ -111,7 +111,7 @@
   <html>
 
   <head>
-    <title>PELAPOR</title>
+    <title>JENIS KASUS</title>
   </head>
 
   <body>

@@ -189,7 +189,7 @@
             $nama_wilayah = $row['nama_wilayah'];
             $kecamatan = $row['kecamatan'];
             echo "
-            <option value='$kecamatan'>$kode_wilayah - $nama_wilayah - $kecamatan</option>
+            <option value='$kecamatan'>$kode_wilayah - $kecamatan</option>
             ";
           }
         } else {

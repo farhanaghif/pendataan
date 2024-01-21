@@ -287,11 +287,11 @@
         $nama_wilayah = $row['nama_wilayah'];
         $kecamatan = $row['kecamatan'];
         echo "
-            <option value='$kecamatan'>$kode_wilayah - $nama_wilayah - $kecamatan</option>
+            <option value='$kecamatan'>$kode_wilayah - $kecamatan</option>
             ";
       }
     } else {
-      echo "<option>Tidak ada Jenis Kasus</option>";
+      echo "<option>Tidak ada Nama Kecamatan</option>";
     }
     $conn->close();
     ?>
