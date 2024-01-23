@@ -130,7 +130,7 @@
     header("content-Disposition: attachment; filename=data_kasus_dewasa.xls");
   ?>
 
-  <h2>Lihat Data Kasus Dewasa</h2>
+  <h2>DATA KASUS DEWASA</h2>
   <hr>
   <br>
 
@@ -161,9 +161,8 @@
       <th>STATUS PERKAWINAN PELAKU</th>
       <th>KONTAK PELAKU</th>
       <th>SATGAS</th>
-      <th>ACTION</th>
     </tr>
-    <?php include 'tampil.php'; ?> <!-- menambahkan kode ini untuk menghubungkan dengan tampil.php -->
+    <?php include 'tampil_excel.php'; ?> <!-- menambahkan kode ini untuk menghubungkan dengan tampil.php -->
   </table>
 
 </body>

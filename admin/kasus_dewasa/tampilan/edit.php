@@ -69,6 +69,11 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    p{
+      color: red;
+      font-size: 11px;
+    }
   </style>
 </head>
 
@@ -82,11 +87,8 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="../../kasus_anak/tampilan/tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
-        <a href="tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
-        <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
-        <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
-        <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
+        <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">JENIS KASUS</a>
+        <a href="../../wilayah/tampilan/tambah_data_wilayah.php">WILAYAH</a>
       </div>
     </div>
 
@@ -95,15 +97,25 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="../../kasus_anak/tampilan/lihat_data_kasus_anak.php">LIHAT DATA KASUS ANAK</a>
-        <a href="lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
+        <a href="../../kasus_anak/tampilan/lihat_data_kasus_anak.php">KASUS ANAK</a>
+        <a href="lihat_data_kasus_dewasa.php">KASUS DEWASA</a>
       </div>
     </div>
-    <a href="../../verifikasi_akun/tampilan/index.php">VERIFIKASI AKUN</a>
-    <a href="../../../logout.php">LOGOUT</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">VERIFIKASI
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="../../verifikasi_akun/tampilan/verifikasi_akun.php">AKUN</a>
+        <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
+      </div>
+    </div>
+    
+    <a href="../logout.php">LOGOUT</a>
   </div>
 
-  <h2>Ubah Data Kasus Dewasa</h2>
+  <h2>UBAH DATA KASUS DEWASA</h2>
   <hr>
   <br>
 
@@ -111,7 +123,7 @@
   <html>
 
   <head>
-    <title>Edit Kasus Dewasa</title>
+    <title>EDUT KASUS DEWASA</title>
   </head>
 
   <body>
@@ -149,7 +161,9 @@
         <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki" <?php echo ($row["jenis_kelamin_korban"] == 'Laki-Laki') ? 'checked' : ''; ?>>Laki-Laki</label><br><br>
 
         <label>TTL KORBAN</label>
-        <input type="text" id="ttl_korban" name="ttl_korban" value="<?php echo $row["ttl_korban"]; ?>"><br><br>
+        <input type="text" id="ttl_korban" name="ttl_korban" value="<?php echo $row["ttl_korban"]; ?>">
+        <p>Format Pengisisan : Tempat Lahir, hh-bb-tttt </p>
+        <p>Contoh : Banjarmasin, 31-12-2010 </p><br>
 
         <label>UMUR KORBAN</label>
         <input type="text" id="umur_korban" name="umur_korban" value="<?php echo $row["umur_korban"]; ?>"><br><br>
@@ -200,7 +214,9 @@
         <input type="text" id="nik_pelaku" name="nik_pelaku" value="<?php echo $row["nik_pelaku"]; ?>"><br><br>
 
         <label>TTL PELAKU</label>
-        <input type="text" id="ttl_pelaku" name="ttl_pelaku" value="<?php echo $row["ttl_pelaku"]; ?>"><br><br>
+        <input type="text" id="ttl_pelaku" name="ttl_pelaku" value="<?php echo $row["ttl_pelaku"]; ?>">
+        <p>Format Pengisisan : Tempat Lahir, hh-bb-tttt </p>
+        <p>Contoh : Banjarmasin, 31-12-2010 </p><br>
 
         <label>UMUR PELAKU</label>
         <input type="text" id="umur_pelaku" name="umur_pelaku" value="<?php echo $row["umur_pelaku"]; ?>"><br><br>

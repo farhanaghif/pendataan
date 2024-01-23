@@ -125,7 +125,7 @@
 
 <body style="background-color:white;">
 
-  <h2>Lihat Data Kasus Anak</h2>
+  <h2>DATA KASUS ANAK</h2>
   <hr>
   <br>
 

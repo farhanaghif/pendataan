@@ -125,7 +125,7 @@
 
 <body style="background-color:white;">
 
-  <h2>Lihat Data Kasus Dewasa</h2>
+  <h2>DATA KASUS DEWASA</h2>
   <hr>
   <br>
 

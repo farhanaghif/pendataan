@@ -145,6 +145,9 @@
               "data": "nama_korban"
             },
             {
+              "data": "nik_korban"
+            },
+            {
               "data": "jenis_kelamin_korban"
             },
             {
@@ -251,11 +254,8 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="../../kasus_anak/tampilan/tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
-        <a href="tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
-        <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
-        <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">TAMBAH DATA JENIS KASUS</a>
-        <a href="../../wilayah/tampilan/tambah_data_wilayah.php">TAMBAH DATA WILAYAH</a>
+        <a href="../../jenis_kasus/tampilan/tambah_data_jenis_kasus.php">JENIS KASUS</a>
+        <a href="../../wilayah/tampilan/tambah_data_wilayah.php">WILAYAH</a>
       </div>
     </div>
 
@@ -264,15 +264,25 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="../../kasus_anak/tampilan/lihat_data_kasus_anak.php">LIHAT DATA KASUS ANAK</a>
-        <a href="lihat_data_kasus_dewasa.php">LIHAT DATA KASUS DEWASA</a>
+        <a href="../../kasus_anak/tampilan/lihat_data_kasus_anak.php">KASUS ANAK</a>
+        <a href="lihat_data_kasus_dewasa.php">KASUS DEWASA</a>
       </div>
     </div>
-    <a href="../../verifikasi_akun/tampilan/index.php">VERIFIKASI AKUN</a>
-    <a href="../../../logout.php">LOGOUT</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">VERIFIKASI
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="../../verifikasi_akun/tampilan/verifikasi_akun.php">AKUN</a>
+        <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
+      </div>
+    </div>
+    
+    <a href="../logout.php">LOGOUT</a>
   </div>
 
-  <h2>Lihat Data Kasus Dewasa</h2>
+  <h2>LIHAT DATA KASUS DEWASA</h2>
   <hr>
   <br>
 
@@ -305,6 +315,7 @@
       <tr>
         <th>NO. REGISTRASI</th>
         <th>NAMA KORBAN</th>
+        <th>NIK KORBAN</th>
         <th>JENIS KELAMIN KORBAN</th>
         <th>TTL KORBAN</th>
         <th>UMUR KORBAN</th>

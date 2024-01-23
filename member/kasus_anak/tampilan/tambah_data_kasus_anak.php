@@ -69,6 +69,11 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    p{
+      color: red;
+      font-size: 11px;
+    }
   </style>
 </head>
 
@@ -78,19 +83,19 @@
     <a href="../../">PROFIL</a>
     <a href="../../ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
     <div class="dropdown">
-      <button class="dropbtn">TAMBAH DATA
+      <button class="dropbtn">PENGAJUAN LAPORAN
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
-        <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
-        <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
+        <a href="tambah_data_kasus_anak.php">KASUS ANAK</a>
+        <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">KASUS DEWASA</a>
       </div>
     </div>
+    <a href="../../status_pengajuan/tampilan/status_pengajuan.php">STATUS PENGAJUAN</a>
     <a href="../../../logout.php">LOGOUT</a>
   </div>
 
-  <h2>TAMBAH DATA KASUS ANAK</h2>
+  <h2>PENGJUAN LAPORAN KASUS ANAK</h2>
   <hr>
   <br>
 
@@ -115,7 +120,9 @@
       <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki">Laki-Laki</label><br><br>
       
       <label>TTL KORBAN</label>
-      <input type="text" id="ttl_korban" name="ttl_korban"><br><br>
+      <input type="text" id="ttl_korban" name="ttl_korban">
+      <p>Format Pengisisan : Tempat Lahir, hh-bb-tttt </p>
+      <p>Contoh : Banjarmasin, 31-12-2010 </p><br>
 
       <label>UMUR KORBAN</label>
       <input type="text" id="umur_korban" name="umur_korban"><br><br>
@@ -193,7 +200,9 @@
       <input type="text" id="nik_pelaku" name="nik_pelaku"><br><br>
 
       <label>TTL PELAKU</label>
-      <input type="text" id="ttl_pelaku" name="ttl_pelaku"><br><br>
+      <input type="text" id="ttl_pelaku" name="ttl_pelaku">
+      <p>Format Pengisisan : Tempat Lahir, hh-bb-tttt </p>
+      <p>Contoh : Banjarmasin, 31-12-2010 </p><br>
 
       <label>UMUR PELAKU</label>
       <input type="text" id="umur_pelaku" name="umur_pelaku"><br><br>

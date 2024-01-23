@@ -78,15 +78,15 @@
     <a href="../../">PROFIL</a>
     <a href="ganti_password.php">GANTI PASSWORD</a>
     <div class="dropdown">
-      <button class="dropbtn">TAMBAH DATA
+      <button class="dropbtn">PENGAJUAN LAPORAN
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="../../kasus_anak/tampilan/tambah_data_kasus_anak.php">TAMBAH DATA KASUS ANAK</a>
-        <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">TAMBAH DATA KASUS DEWASA</a>
-        <a href="../../pelapor/tampilan/tambah_data_pelapor.php">TAMBAH DATA PELAPOR</a>
+        <a href="../../kasus_anak/tampilan/tambah_data_kasus_anak.php">KASUS ANAK</a>
+        <a href="../../kasus_dewasa/tampilan/tambah_data_kasus_dewasa.php">KASUS DEWASA</a>
       </div>
     </div>
+    <a href="../../status_pengajuan/tampilan/status_pengajuan.php">STATUS PENGAJUAN</a>
     <a href="../../../logout.php">LOGOUT</a>
   </div>
 
