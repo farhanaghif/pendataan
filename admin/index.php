@@ -110,7 +110,8 @@
         <a href="verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
       </div>
     </div>
-    
+
+    <a href="status_pengajuan/tampilan/status_pengajuan.php">STATUS PENGAJUAN</a>
     <a href="../logout.php">LOGOUT</a>
   </div>
 
