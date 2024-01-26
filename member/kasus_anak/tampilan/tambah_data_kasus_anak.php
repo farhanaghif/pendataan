@@ -70,11 +70,20 @@
       display: block;
     }
 
-    p{
+    p {
       color: red;
       font-size: 11px;
     }
   </style>
+  <script>
+    function resizeInput(element) {
+      element.style.width = (element.value.length + 1) + 'ch';
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      var inputElement = document.getElementById("no_registrasi");
+      resizeInput(inputElement);
+    });
+  </script>
 </head>
 
 <body style="background-color:white;">
@@ -109,16 +118,21 @@
   <body>
 
     <form action="../aksi/tambah.php" method="post">
+      <?php
+      include '../../../koneksi.php';
+      include '../../../function.php';
+      $registrationNumber = noRegKasusAnak($conn);
+      ?>
       <label>NO. REGISTRASI</label>
-      <input type="text" id="no_registrasi" name="no_registrasi"><br><br>
-      
+      <input type="text" id="no_registrasi" name="no_registrasi" disabled value="<?php echo "$registrationNumber"; ?>" oninput="resizeInput(this)"><br><br>
+
       <label>NAMA KORBAN</label>
       <input type="text" id="nama_korban" name="nama_korban"><br><br>
 
       <label>JENIS KELAMIN KORBAN</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Perempuan">Perempuan</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki">Laki-Laki</label><br><br>
-      
+
       <label>TTL KORBAN</label>
       <input type="text" id="ttl_korban" name="ttl_korban">
       <p>Format Pengisisan : Tempat Lahir, hh-bb-tttt </p>
@@ -132,7 +146,7 @@
 
       <label>KONTAK KORBAN/WALI</label>
       <input type="text" id="kontak_korban" name="kontak_korban"><br><br>
-      
+
       <label>KRONOLOGI SINGKAT</label><br>
       <textarea name="kronologi_singkat"></textarea><br><br>
 
