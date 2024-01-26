@@ -37,6 +37,25 @@ function noRegKasusDewasa($conn)
     }
 }
 
+function generateCode($conn, $tableName)
+{
+    $sql = "SELECT COUNT(*) as count FROM $tableName";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $count = $row["count"];
+
+        $nextCode = $count + 1;
+
+        $formattedCode = sprintf("%03d", $nextCode);
+
+        return $formattedCode;
+    } else {
+        return "001";
+    }
+}
+
 function romanNumeral($num)
 {
     $n = intval($num);

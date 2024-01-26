@@ -106,7 +106,7 @@
         <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
       </div>
     </div>
-    
+
     <a href="../logout.php">LOGOUT</a>
   </div>
 
@@ -124,8 +124,14 @@
   <body>
 
     <form action="../aksi/tambah.php" method="post">
+      <?php
+      include '../../../koneksi.php';
+      include '../../../function.php';
+      $registrationNumber = generateCode($conn, 'jenis_kasus');
+      ?>
       <label>KODE JENIS KASUS</label>
-      <input type="text" id="kode_jenis_kasus" name="kode_jenis_kasus"><br><br>
+      <input type="text" id="kode_jenis_kasus" disabled name="display_kode_jenis_kasus" value="<?php echo "$registrationNumber"; ?>"><br><br>
+      <input type="text" id="kode_jenis_kasus" hidden name="kode_jenis_kasus" value="<?php echo "$registrationNumber"; ?>"><br><br>
 
       <label>JENIS KASUS</label>
       <input type="text" id="jenis_kasus" name="jenis_kasus"><br><br>

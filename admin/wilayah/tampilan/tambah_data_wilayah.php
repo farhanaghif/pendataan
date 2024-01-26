@@ -74,7 +74,7 @@
 
 <body style="background-color:white;">
 
-<div class="navbar">
+  <div class="navbar">
     <a href="../../">PROFIL</a>
     <a href="../../ganti_password/tampilan/ganti_password.php">GANTI PASSWORD</a>
     <div class="dropdown">
@@ -106,7 +106,7 @@
         <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
       </div>
     </div>
-    
+
     <a href="../logout.php">LOGOUT</a>
   </div>
 
@@ -124,8 +124,14 @@
   <body>
 
     <form action="../aksi/tambah.php" method="post">
+      <?php
+      include '../../../koneksi.php';
+      include '../../../function.php';
+      $registrationNumber = generateCode($conn, 'wilayah');
+      ?>
       <label>KODE WILAYAH</label>
-      <input type="text" id="kode_wilayah" name="kode_wilayah"><br><br>
+      <input type="text" id="kode_wilayah" disabled value="<?php echo "$registrationNumber"; ?>" name="display_kode_wilayah"><br><br>
+      <input type="text" id="kode_wilayah" hidden value="<?php echo "$registrationNumber"; ?>" name="kode_wilayah">
 
       <label>NAMA WILAYAH</label>
       <input type="text" id="nama_wilayah" name="nama_wilayah"><br><br>
