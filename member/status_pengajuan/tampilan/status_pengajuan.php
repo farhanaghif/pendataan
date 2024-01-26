@@ -66,10 +66,64 @@
       background-color: #ddd;
     }
 
+    th {
+      background-color: rgb(19, 110, 170);
+      color: white;
+    }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+  <script>
+    $(document).ready(function() {
+      var dataTable;
+
+      // Initialize DataTable with AJAX
+      function initializeDataTable(filterValue) {
+        dataTable = $('#myDataTable').DataTable({
+          "ajax": {
+            "url": "tampil.php",
+            "type": "POST",
+            "data": {
+              "kecamatan": filterValue
+            }
+          },
+          "columns": [{
+              "data": "no_registrasi"
+            },
+            {
+              "data": "nama_korban"
+            },
+            {
+              "data": "jenis_kasus"
+            },
+            {
+              "data": "nama_pelaku"
+            },
+            {
+              "data": "status_pengajuan"
+            }
+          ],
+        });
+      }
+
+      // Initialize DataTable with the default filter value
+      initializeDataTable('');
+
+      // Update the table when the kecamatan dropdown changes
+      $('#kecamatanDropdown').on('change', function() {
+        var selectedKecamatan = $(this).val();
+        // Destroy the existing DataTable instance
+        dataTable.destroy();
+        // Initialize DataTable with the new filter value
+        initializeDataTable(selectedKecamatan);
+      });
+    });
+  </script>
 </head>
 
 <body style="background-color:white;">
@@ -94,21 +148,21 @@
   <hr>
   <br>
 
-  <!DOCTYPE html>
-  <html>
+  <table id="myDataTable">
+    <thead>
+      <tr>
+        <th>NO. REGISTRASI</th>
+        <th>NAMA KORBAN</th>
+        <th>JENIS KASUS</th>
+        <th>NAMA PELAKU</th>
+        <th>STATUS PENGAJUAN</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 
-  <head>
-    <title>STATUS PENGAJUAN</title>
-  </head>
-
-  <body>
-
-    
-
-  </body>
-
-  </html>
-
+  <br>
 
 </body>
 

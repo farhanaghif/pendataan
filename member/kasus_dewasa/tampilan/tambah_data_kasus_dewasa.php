@@ -124,7 +124,8 @@
       $registrationNumber = noRegKasusDewasa($conn);
       ?>
       <label>NO. REGISTRASI</label>
-      <input type="text" id="no_registrasi" name="no_registrasi" disabled value="<?php echo "$registrationNumber"; ?>" oninput="resizeInput(this)"><br><br>
+      <input type="text" id="no_registrasi" name="display_no_registrasi" disabled value="<?php echo "$registrationNumber"; ?>" oninput="resizeInput(this)"><br><br>
+      <input type="text" id="no_registrasi" name="no_registrasi" hidden value="<?php echo "$registrationNumber"; ?>">
 
       <label>NAMA KORBAN</label>
       <input type="text" id="nama_korban" name="nama_korban"><br><br>
