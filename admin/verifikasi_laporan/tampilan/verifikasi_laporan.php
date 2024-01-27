@@ -114,12 +114,82 @@
       background-color: #ddd;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
   <script>
-    function confirmDelete(id) {
-      if (confirm("Apakah Anda yakin ingin menghapus data?")) {
-        window.location.href = "../aksi/hapus.php?id=" + id;
+    $(document).ready(function() {
+      var dataTable;
+
+      // Initialize DataTable with AJAX
+      function initializeDataTable(filterValue) {
+        dataTable = $('#myDataTable').DataTable({
+          "ajax": {
+            "url": "tampil.php",
+            "type": "POST",
+            "data": {
+              "kecamatan": filterValue
+            }
+          },
+          "columns": [{
+              "data": "no_registrasi"
+            },
+            {
+              "data": "nama_korban"
+            },
+            {
+              "data": "jenis_kasus"
+            },
+            {
+              "data": "nama_pelaku"
+            },
+            {
+              "data": "status_pengajuan"
+            },
+            // {
+            //   "data": null,
+            //   "render": function(data, type, row) {
+            //     return `
+            //   <button class='edit-btn' onclick='window.location.href="edit_status_pengajuan.php?id=${row.id}"'>Edit</button>
+            // `;
+            //   }
+            // }
+            {
+              "data": null,
+              "render": function(data, type, row) {
+                var statusPengajuan = row.status_pengajuan;
+                var buttonClass = (statusPengajuan === "Sedang Diproses") ? "edit-btn-sedang-diproses" : "edit-btn-diterima";
+                if (statusPengajuan == 'Selesai') {
+                  return '-';
+                } else if (statusPengajuan == 'Sedang Diproses') {
+                  var statusDitolak = 'Ditolak';
+                  return `
+                      <button class='${buttonClass}' onclick='window.location.href="edit_status_pengajuan.php?no_registrasi=${row.no_registrasi}&status=${encodeURIComponent(statusPengajuan)}"'>Proses Kasus Sekarang</button>
+                      <button class='${buttonClass}' onclick='window.location.href="edit_status_pengajuan.php?no_registrasi=${row.no_registrasi}&status=${encodeURIComponent(statusDitolak)}"'>Tolak</button>
+                  `;
+                } else {
+                  return `
+                      <button class='${buttonClass}' onclick='window.location.href="edit_status_pengajuan.php?no_registrasi=${row.no_registrasi}&status=${encodeURIComponent(statusPengajuan)}"'>Kasus Selesai</button>
+                  `;
+                }
+              }
+            }
+          ],
+        });
       }
-    }
+
+      // Initialize DataTable with the default filter value
+      initializeDataTable('');
+
+      // Update the table when the kecamatan dropdown changes
+      $('#kecamatanDropdown').on('change', function() {
+        var selectedKecamatan = $(this).val();
+        // Destroy the existing DataTable instance
+        dataTable.destroy();
+        // Initialize DataTable with the new filter value
+        initializeDataTable(selectedKecamatan);
+      });
+    });
   </script>
 </head>
 
@@ -157,12 +227,29 @@
         <a href="verifikasi_laporan.php">LAPORAN</a>
       </div>
     </div>
-    
-    <a href="../logout.php">LOGOUT</a>
+
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>STATUS VERIFIKASI LAPORAN</h2>
   <hr>
+  <br>
+
+  <table id="myDataTable">
+    <thead>
+      <tr>
+        <th>NO. REGISTRASI</th>
+        <th>NAMA KORBAN</th>
+        <th>JENIS KASUS</th>
+        <th>NAMA PELAKU</th>
+        <th>STATUS PENGAJUAN</th>
+        <th>AKSI</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
   <br>
 
 </body>
