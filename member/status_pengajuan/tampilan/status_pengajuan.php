@@ -106,6 +106,18 @@
             },
             {
               "data": "status_pengajuan"
+            },
+            {
+              "data": null,
+              "render": function(data, type, row) {
+                var statusPengajuan = row.status_pengajuan;
+                if (statusPengajuan != 'Sedang Diproses') {
+                  return '-';
+                }
+                return `
+                      <button class='aksi' onclick='window.location.href="../aksi/batal_pengajuan.php?no_registrasi=${row.no_registrasi}"'>Batal</button>
+                  `;
+              }
             }
           ],
         });
@@ -156,6 +168,7 @@
         <th>JENIS KASUS</th>
         <th>NAMA PELAKU</th>
         <th>STATUS PENGAJUAN</th>
+        <th>AKSI</th>
       </tr>
     </thead>
     <tbody>
