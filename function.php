@@ -20,7 +20,7 @@ function noRegKasusAnak($conn)
 
 function noRegKasusDewasa($conn)
 {
-    $sql = "SELECT COUNT(*) as count FROM kasus_anak";
+    $sql = "SELECT COUNT(*) as count FROM kasus_dewasa";
     $result = $conn->query($sql);
 
     if ($result && $result->num_rows > 0) {
