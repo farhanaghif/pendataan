@@ -140,13 +140,15 @@
       var dataTable;
 
       // Initialize DataTable with AJAX
-      function initializeDataTable(filterValue) {
+      // function initializeDataTable(filterValue) {
+      function initializeDataTable(kecamatanFilter, jenisKasusFilter) {
         dataTable = $('#myDataTable').DataTable({
           "ajax": {
             "url": "tampil.php",
             "type": "POST",
             "data": {
-              "kecamatan": filterValue
+              "kecamatan": kecamatanFilter,
+              "jenis_kasus": jenisKasusFilter
             }
           },
           "columns": [{
@@ -242,15 +244,31 @@
       }
 
       // Initialize DataTable with the default filter value
-      initializeDataTable('');
+      // initializeDataTable('');
+      initializeDataTable('', '');
 
       // Update the table when the kecamatan dropdown changes
+      // $('#kecamatanDropdown').on('change', function() {
+      //   var selectedKecamatan = $(this).val();
+      //   // Destroy the existing DataTable instance
+      //   dataTable.destroy();
+      //   // Initialize DataTable with the new filter value
+      //   initializeDataTable(selectedKecamatan);
+      // });
       $('#kecamatanDropdown').on('change', function() {
         var selectedKecamatan = $(this).val();
         // Destroy the existing DataTable instance
         dataTable.destroy();
-        // Initialize DataTable with the new filter value
-        initializeDataTable(selectedKecamatan);
+        // Initialize DataTable with the new filter values
+        initializeDataTable(selectedKecamatan, $('#jenisKasusDropdown').val());
+      });
+
+      $('#jenis_kasusDropdown').on('change', function() {
+        var selectedJenisKasus = $(this).val();
+        // Destroy the existing DataTable instance
+        dataTable.destroy();
+        // Initialize DataTable with the new filter values
+        initializeDataTable($('#kecamatanDropdown').val(), selectedJenisKasus);
       });
     });
   </script>
@@ -318,6 +336,29 @@
       }
     } else {
       echo "<option>Tidak ada Nama Kecamatan</option>";
+    }
+    $conn->close();
+    ?>
+  </select><br><br>
+
+  <label for="jenis_kasusDropdown">Filter Jenis Kasus</label>
+  <select name="jenis_kasus" id="jenis_kasusDropdown">
+    <option value=''>-- Pilih Jenis Kasus--</option>
+    <?php
+    include '../../../koneksi.php';
+    $sql_jenis_kasus = "SELECT * FROM jenis_kasus";
+    $result_jenis_kasus = $conn->query($sql_jenis_kasus);
+    if ($result_jenis_kasus->num_rows > 0) {
+      while ($row = $result_jenis_kasus->fetch_assoc()) {
+        $id = $row['id'];
+        $kode_jenis_kasus = $row['kode_jenis_kasus'];
+        $jenis_kasus = $row['jenis_kasus'];
+        echo "
+            <option value='$jenis_kasus'>$kode_jenis_kasus - $jenis_kasus</option>
+            ";
+      }
+    } else {
+      echo "<option>Tidak ada Jenis Kasus</option>";
     }
     $conn->close();
     ?>
