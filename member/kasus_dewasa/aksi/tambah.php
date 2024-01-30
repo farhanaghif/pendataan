@@ -26,7 +26,6 @@ $alamat_pelaku = $_POST["alamat_pelaku"];
 $pekerjaan_pelaku = $_POST["pekerjaan_pelaku"];
 $status_perkawinan_pelaku = $_POST["status_perkawinan_pelaku"];
 $kontak_pelaku = $_POST["kontak_pelaku"];
-$satgas = $_POST["satgas"];
 
 // Masukkan data ke database
 $sql = "INSERT INTO `kasus_dewasa` 
@@ -34,12 +33,12 @@ $sql = "INSERT INTO `kasus_dewasa`
 `umur_korban`, `alamat`, `kontak_korban`, `kronologi_singkat`, `pekerjaan_korban`, 
 `status_perkawinan_korban`, `jenis_kasus`, `tanggal_kejadian`, `alamat_tkp`, `kecamatan`, 
 `nama_pelaku`, `nik_pelaku`, `ttl_pelaku`, `umur_pelaku`, `hubungan_dengan_korban`, 
-`alamat_pelaku`, `pekerjaan_pelaku`,  `status_perkawinan_pelaku`, `kontak_pelaku`, `satgas`, `status_pengajuan`) 
+`alamat_pelaku`, `pekerjaan_pelaku`,  `status_perkawinan_pelaku`, `kontak_pelaku`, `status_pengajuan`) 
 VALUES ('$no_registrasi', '$nama_korban', '$nik_korban', '$jenis_kelamin_korban', '$ttl_korban', 
 '$umur_korban', '$alamat', '$kontak_korban', '$kronologi_singkat', '$pekerjaan_korban', 
 '$status_perkawinan_korban', '$jenis_kasus', '$tanggal_kejadian', '$alamat_tkp', '$kecamatan', 
 '$nama_pelaku', '$nik_pelaku', '$ttl_pelaku', '$umur_pelaku', '$hubungan_dengan_korban', 
-'$alamat_pelaku', '$pekerjaan_pelaku', '$status_perkawinan_pelaku', '$kontak_pelaku', '$satgas', 'Sedang Diproses')";
+'$alamat_pelaku', '$pekerjaan_pelaku', '$status_perkawinan_pelaku', '$kontak_pelaku', 'Sedang Diproses')";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {

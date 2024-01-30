@@ -238,9 +238,6 @@
       <label>KONTAK PELAKU</label>
       <input type="text" id="kontak_pelaku" name="kontak_pelaku"><br><br>
 
-      <label>SATGAS</label>
-      <input type="text" id="satgas" name="satgas"><br><br>
-
       <input type="submit" name="tambah" value="Tambah">
       <input type="reset" name="reset" value="Reset">
     </form>

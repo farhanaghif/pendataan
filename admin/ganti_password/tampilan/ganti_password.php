@@ -103,7 +103,7 @@
       </button>
       <div class="dropdown-content">
         <a href="../../verifikasi_akun/tampilan/verifikasi_akun.php">AKUN</a>
-        <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">LAPORAN</a>
+        <a href="../../verifikasi_laporan/tampilan/verifikasi_laporan.php">KASUS</a>
       </div>
     </div>
     

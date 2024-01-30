@@ -224,14 +224,14 @@
       </button>
       <div class="dropdown-content">
         <a href="../../verifikasi_akun/tampilan/verifikasi_akun.php">AKUN</a>
-        <a href="verifikasi_laporan.php">LAPORAN</a>
+        <a href="verifikasi_laporan.php">KASUS</a>
       </div>
     </div>
 
     <a href="../../../logout.php">LOGOUT</a>
   </div>
 
-  <h2>STATUS VERIFIKASI LAPORAN</h2>
+  <h2>STATUS VERIFIKASI KASUS</h2>
   <hr>
   <br>
 
