@@ -14,11 +14,11 @@
 
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#profil">Profil</a></li>
-      <li><a href="#struktur">Struktur</a></li>
-      <li><a href="#kegiatan">Kegiatan</a></li>
-      <li><a href="login.php">Login</a></li>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#profil">PROFIL</a></li>
+      <li><a href="#struktur">STRUKTUR</a></li>
+      <li><a href="#kegiatan">KEGIATAN</a></li>
+      <li><a href="login.php">LOGIN</a></li>
     </ul>
   </nav>
 

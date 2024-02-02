@@ -304,7 +304,7 @@
       </div>
     </div>
 
-    <a href="../logout.php">LOGOUT</a>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>LIHAT DATA KASUS ANAK</h2>

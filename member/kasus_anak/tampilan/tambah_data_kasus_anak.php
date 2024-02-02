@@ -130,9 +130,6 @@
       <label>NAMA KORBAN</label>
       <input type="text" id="nama_korban" name="nama_korban"><br><br>
 
-      <label>NIK KORBAN</label>
-      <input type="text" id="nik_korban" name="nik_korban"><br><br>
-
       <label>JENIS KELAMIN KORBAN</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Perempuan">Perempuan</label>
       <label><input type="radio" name="jenis_kelamin_korban" value="Laki-Laki">Laki-Laki</label><br><br>

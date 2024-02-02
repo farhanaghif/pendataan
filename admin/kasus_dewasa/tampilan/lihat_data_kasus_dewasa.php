@@ -310,7 +310,7 @@
       </div>
     </div>
 
-    <a href="../logout.php">LOGOUT</a>
+    <a href="../../../logout.php">LOGOUT</a>
   </div>
 
   <h2>LIHAT DATA KASUS DEWASA</h2>
@@ -374,7 +374,7 @@
         <th>TTL KORBAN</th>
         <th>UMUR KORBAN</th>
         <th>ALAMAT</th>
-        <th>KONTAK KORBAN/WALI</th>
+        <th>KONTAK KORBAN</th>
         <th>KRONOLOGI SINGKAT</th>
         <th>PEKERJAAN KORBAN</th>
         <th>STATUS PERKAWINAN KORBAN</th>
