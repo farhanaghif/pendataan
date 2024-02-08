@@ -1,6 +1,7 @@
 <?php
 include '../../../koneksi.php';
-
+session_start();
+$user_id = $_SESSION["id"];
 // Ambil data dari form
 $no_registrasi = $_POST["no_registrasi"];
 $nama_korban = $_POST["nama_korban"];
@@ -29,12 +30,12 @@ $kontak_pelaku = $_POST["kontak_pelaku"];
 
 // Masukkan data ke database
 $sql = "INSERT INTO `kasus_dewasa` 
-(`no_registrasi`, `nama_korban`, `nik_korban`, `jenis_kelamin_korban`, `ttl_korban`, 
+(`no_registrasi`, `user_id`,  `nama_korban`, `nik_korban`, `jenis_kelamin_korban`, `ttl_korban`, 
 `umur_korban`, `alamat`, `kontak_korban`, `kronologi_singkat`, `pekerjaan_korban`, 
 `status_perkawinan_korban`, `jenis_kasus`, `tanggal_kejadian`, `alamat_tkp`, `kecamatan`, 
 `nama_pelaku`, `nik_pelaku`, `ttl_pelaku`, `umur_pelaku`, `hubungan_dengan_korban`, 
 `alamat_pelaku`, `pekerjaan_pelaku`,  `status_perkawinan_pelaku`, `kontak_pelaku`, `status_pengajuan`) 
-VALUES ('$no_registrasi', '$nama_korban', '$nik_korban', '$jenis_kelamin_korban', '$ttl_korban', 
+VALUES ('$no_registrasi', '$user_id', '$nama_korban', '$nik_korban', '$jenis_kelamin_korban', '$ttl_korban', 
 '$umur_korban', '$alamat', '$kontak_korban', '$kronologi_singkat', '$pekerjaan_korban', 
 '$status_perkawinan_korban', '$jenis_kasus', '$tanggal_kejadian', '$alamat_tkp', '$kecamatan', 
 '$nama_pelaku', '$nik_pelaku', '$ttl_pelaku', '$umur_pelaku', '$hubungan_dengan_korban', 
